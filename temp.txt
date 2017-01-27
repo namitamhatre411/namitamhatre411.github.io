@@ -1,0 +1,13 @@
+http://localhost/Namita/index.php#home
+file:///C:/xampp/htdocs/Nemo/index.html
+http://www.w3schools.com/css/css_font.asp
+http://www.w3schools.com/bootstrap/bootstrap_ref_comp_glyphs.asp
+http://npatil.me/
+https://devchat.tv/
+http://blog.codinghorror.com/a-programmers-portfolio/
+http://grokcode.com/58/the-power-of-a-programming-portfolio/
+https://www.lessannoyingcrm.com/blog/Programmer_Portfolio
+http://comicsanscriminal.com/#
+http://www.w3schools.com/cssref/css_colors.asp
+
+http://exception.it-rays.net/home4/
