@@ -18,7 +18,6 @@ p {
     color: #111;
 }
 
-
 .form-control {
     border-radius: 0;
 }
@@ -69,21 +68,21 @@ textarea {
 /* NAVIGATION BAR END */
 
 
-/* CAROUSEL 
+/* CAROUSEL */
 .carousel-inner img {
-    margin: auto;
+    
+    width: 100%; 
+    
+    
 }
 
-.carousel-inner{
-	width: 100%; 
-	height: 700px;
-}
 
 .left.carousel-control{
 	position: absolute;
 	top:50%;
 	right: 10px;
 }
+
 .carousel-caption h3 {
     color: #fff !important;
 }
@@ -93,7 +92,7 @@ textarea {
 		display: none; 
     }
 }
- CAROUSEL END */
+/* CAROUSEL END */
 
 
 /* HOME */
@@ -102,6 +101,8 @@ textarea {
 	width: 100%;
 	height: 100%;
 }
+
+
 /* HOME END */
 
 
@@ -111,6 +112,18 @@ textarea {
 	width: 100%;
 	height: 100%;
 }
+
+.person {
+      border: 10px solid transparent;
+      margin-bottom: 25px;
+      width: 80%;
+      height: 80%;
+      opacity: 0.7;
+  }
+
+.person:hover {
+      border-color: #f1f1f1;
+  }
 /* ABOUT ME END */
 
 
@@ -120,6 +133,8 @@ textarea {
 	width: 100%;
 	height: 100%;
 }
+
+
 /* SKILLS END */
 
 
@@ -128,6 +143,17 @@ textarea {
 	background-color: #ff7f50;
 	width: 100%;
 	height: 100%;
+}
+
+.thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+}
+
+.thumbnail p {
+      margin-top: 15px;
+      color: #555;
 }
 /* EXPERIENCE END */
 
@@ -265,12 +291,21 @@ b{
     color: #1abc9c;
 }
  
+
+.pull-centre
+{
+    position:relative;
+    top: 200px;
+    left: 30px;
+}
+
 .pull-right
 {
 	position:relative;
 	top: 100px;
 	left: 50px;
 }
+
 /* BUTTON END */
 
 
@@ -283,12 +318,14 @@ b{
 }
 
 .modal-header, .modal-body {
-    padding: 40px 50px;
+    padding: 20px 20px;
 }
 
-.modal{
+.modal,
+{
 	background-color: #81cec5;
 	opacity: 0.8;
 }
+
 
 /* POP-UP END */
