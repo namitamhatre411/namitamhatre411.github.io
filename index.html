@@ -21,9 +21,6 @@
 
 
 
-
-
-
 <!-- BODY START  -->
 <body id="namita" data-spy="scroll" data-target=".navbar" data-offset="50">
 
@@ -39,9 +36,6 @@
 			<a class="navbar-brand">Namita Mhatre</a> 
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
-			<!-- <ul class="nav navbar-nav navbar-left">
-				<li><a href="hci.html">CSE-592</a></li>
-			</ul> -->
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#home">HOME</a></li>
 				<li><a href="#about-me">ABOUT ME</a></li>
@@ -55,22 +49,16 @@
 	</div>
 </nav>
 <!--  NAVIGATION BAR END -->
-
-<!-- CAROUSEL -->
-
-<!-- CAROUSEL END --> 
+ 
 
 <!-- HOME  -->
-<div id="home" class="container home">
-	
-	<!-- <h3 class="text-center slideanim">Home</h3> -->
+<div id="home" class="container home" onclick="goToByScroll('about-me')">
 
 	<br> <br> <br>
 	<div class="col-md-4">
 		
 		<img src="images/me.jpg" width="100%" height="400px">
 
-		
 	</div>
 
 	<div class="col-md-4">
@@ -85,7 +73,7 @@
 		<p>
 			Link to CSE-592 Class assignments and projects!
 		</p>
-		<button class="btn"><a style=" text-decoration: none; margin: 10px 0 30px 0; letter-spacing: 5px;  font-size: 20px; color: #fff; " href="hci.html" target="_blank">CSE-592</a></button>
+		<a style=" text-decoration: none; margin: 10px 0 30px 0; letter-spacing: 5px;  font-size: 20px; color: #fff;" class="btn" href="hci.html" target="_blank">CSE-592</a>
 
 	</div>
   
@@ -94,18 +82,11 @@
 
 
 <!-- ABOUT ME -->
-<div id="about-me" class="container about-me">
-
-	<!-- <h3 class="text-center slideanim">About me</h3> -->
+<div id="about-me" class="container about-me" onclick="goToByScroll('second')">
 
 	<div class="col-md-4">
 		<p class="text-center" style="color: #fff"><strong>Namita Mhatre</strong></p><br>
-      	<a href="#info" data-toggle="collapse">
-        	<img src="images/photo.jpeg" class="img-circle person" width="370" height="370">
-      	</a>
-      	<!-- <div id="info" class="collapse"> -->
-        	<!-- <p> Explorer | Wandered | Dreamer </p> -->
-      	<!-- </div> -->
+      		<img src="images/photo.jpeg" class="img-circle person" width="370" height="370">
 	</div>
 
 	<div class="col-md-8">
@@ -122,183 +103,8 @@
 </div>
 <!-- ABOUT ME END  -->
 
-<style>
-
-.bar-chart {
-    list-style: none;
-    height: 400px;
-    position: relative;
-    padding: 0;
-    margin: 0px;
-    /* Y Axis */
-}
-
-.bar-chart li {
-    display: inline-block;
-    width: 10%;
-    height: 100%;
-    background-color:  #24261f;
-    text-align: center;
-    font-weight: bold;
-    color: #FFF;
-    position: relative;
-    font-size: 18px;
-    font-size: 1.8rem;
-    margin: 0 1.8% 0 0;
-    border: #BBB solid 1px;
-    vertical-align: bottom;
-    border-bottom: #BBB solid 1px;
-    -webkit-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.6);
-    -moz-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.6);
-    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.6);
-}
-
-.bar-chart li:nth-child(6n) {
-    margin-right: 0;
-}
- 
-.bar-chart .percent {
-    opacity: 0.3;
-    position: absolute;
-    bottom: 50px;
-    font-size: 45px;
-    font-size: 4.5rem;
-    width: 100%;
-    line-height: 1em;
-}
-
-.bar-chart .percent span {
-    font-size: 24px;
-    font-size: 2.4rem;
-    padding-left: 3px;
-}
-
-.bar-chart .skill {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    font-size: 12px;
-    font-size: 1.2rem;
-}
-
-.bar-chart .p-50 {
-    height: 50%;
-}
-
-.bar-chart .p-60 {
-    height: 60%;
-}
-
-.bar-chart .p-75 {
-    height: 75%;
-}
-
-.bar-chart .p-80 {
-    height: 80%;
-}
-
-.bar-chart .p-85 {
-    height: 85%;
-
-}
-
-.bar-chart .p-90 {
-    height: 90%;
-}
-
-.bar-chart .p-95 {
-    height: 95%;
-}
-
-.bar-chart .p-100 {
-    height: 100%;
-}
-
-.bar-chart .aqua {
-    border-color: #8dc5be;
-    background-color: #b0dbd6;
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #5fb2a8), color-stop(1, #b0dbd6));
-    background-image: -ms-linear-gradient(bottom, #5fb2a8, #b0dbd6);
-    background-image: -moz-linear-gradient(center bottom, #5fb2a8 0%, #b0dbd6 100%);
-    background-image: -o-linear-gradient(bottom, #5fb2a8, #b0dbd6);
-}
-
-.bar-chart .pink {
-    border-color: #ebc0b5;
-    background-color: #f4dcd6;
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #e1ae9e), color-stop(1, #f4dcd6));
-    background-image: -ms-linear-gradient(bottom, #e1ae9e, #f4dcd6);
-    background-image: -moz-linear-gradient(center bottom, #e1ae9e 0%, #f4dcd6 100%);
-    background-image: -o-linear-gradient(bottom, #e1ae9e, #f4dcd6);
-}
-
-.bar-chart .yellow {
-    border-color: #e7af30;
-    background-color: #efc563;
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #dfae36), color-stop(1, #efc563));
-    background-image: -ms-linear-gradient(bottom, #dfae36, #efc563);
-    background-image: -moz-linear-gradient(center bottom, #dfae36 0%, #efc563 100%);
-    background-image: -o-linear-gradient(bottom, #dfae36, #efc563);
-}
-
-.bar-chart .brown {
-    border-color: #dcb386;
-    background-color: #dcba83;
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #bc8e5b), color-stop(1, #dcba83));
-    background-image: -ms-linear-gradient(bottom, #bc8e5b, #dcba83);
-    background-image: -moz-linear-gradient(center bottom, #bc8e5b 0%, #dcba83 100%);
-    background-image: -o-linear-gradient(bottom, #bc8e5b, #dcba83);
-}
-
-.bar-chart .red {
-    border-color: #e14949;
-    background-color: #da6d6c;
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ca4544), color-stop(1, #da6d6c));
-    background-image: -ms-linear-gradient(bottom, #ca4544, #da6d6c);
-    background-image: -moz-linear-gradient(center bottom, #ca4544 0%, #da6d6c 100%);
-    background-image: -o-linear-gradient(bottom, #ca4544, #da6d6c);
-}
-
-.bar-chart li.axis {
-    width: 8%;
-    border: 0;
-    border-right: #DDD solid 1px;
-    height: 450px;
-    background:  #24261f;
-    -webkit-box-shadow: inset 0 0 0 0 #ffffff;
-    -moz-box-shadow: inset 0 0 0 0 #ffffff;
-    box-shadow: inset 0 0 0 0 #ffffff;
-}
-
-.nopad-b {
-  padding-bottom: 0 !important;
-}
-
-section.dark {
-  background:  #24261f;
-  border-bottom: #dddddd solid 1px;
-  padding: 3em 1.5em;
-}
-
-section.dark {
-  -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
-}
-
-section.dark {
-    padding: 4.5em 5%;
-}
-
-section.dark {
-    padding: 6em 5%;
-}
-
-
-</style>
 <!-- SKIILS START  -->
 <div id="skills" class="container skills">
-	<!-- <h3 class="text-center slideanim" >Skills</h3> -->
 
 	<section id="bar-chart" class="dark nopad-b">
 		<div class="row">
@@ -350,33 +156,32 @@ section.dark {
 <!-- EXPERIENCE START  -->
 
 
-<div id="experience" class="container experience">
-	<!-- <h3 class="text-center slideanim">Experience</h3> -->
+<div id="experience" class="container experience" onClick="goToByScroll('blog')">
 
-	<div class="row text-center">
+    <div class="row text-center">
       
-      	<div class="col-md-1"></div>
-      	<div class="col-md-4">
-        	<div class="thumbnail">
-        	  <img src="images/donna.jpeg" alt="Wohlig Technologies" width="400" height="300">
-        		  <p><strong>Wohlig Technologies</strong></p>
-        		  <p>October '14-January '15</p>
-        	  <!-- <button class="btn" data-toggle="modal" data-target="#myModal">Responsibilities</button> -->
-        	</div>
-      	</div>
+        <div class="col-md-1"></div>
+        
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="images/donna.jpeg" alt="Wohlig Technologies" width="400" height="300">
+                    <p><strong>Wohlig Technologies</strong></p>
+                    <p>October '14-January '15</p>
+            </div>
+        </div>
       
-      	<div class="col-md-2"></div>
-      	<div class="col-md-4">
-      	  <div class="thumbnail">
-      	    <img src="images/st.png" alt="MSRTC" width="400" height="300">
-      		    <p><strong>MSRTC</strong></p>
-      	    	<p>February '15-January '16</p>
-      	    <!-- <button class="btn" data-toggle="modal" data-target="#myModal1">Responsibilities</button> -->
-
-      	  </div>
-      	  <br><br>
-      	</div>
-      	<div class="col-md-1"></div>
+        <div class="col-md-2"></div>
+        
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="images/st.png" alt="MSRTC" width="400" height="300">
+                    <p><strong>MSRTC</strong></p>
+                    <p>February '15-January '16</p>
+          </div>
+          <br><br>
+        </div>
+        
+        <div class="col-md-1"></div>
 
       	<button class="btn"><a style=" text-decoration: none; margin: 10px 0 30px 0; letter-spacing: 5px;  font-size: 20px; color: #fff; " href="resume/Resume_Namita_Mhatre.pdf" download>DOWNLOAD MY RESUME</a></button>
       	<br><br>
@@ -389,7 +194,6 @@ section.dark {
 
 <!-- BLOG START  -->
 <div id="blog" class="container blog">
-	<!-- <h3 class="text-center slideanim">Blog</h3> -->
 	<div class="col-sm-4"></div>
 	<div class="col-sm-4">
 	<br><br><br><br><br><br><br><br><p align="center">COMING SOON</p><br><br><br><br><br><br><br>
@@ -400,7 +204,6 @@ section.dark {
 
 <!-- GALLERY START  -->
 <div id="gallery" class="container gallery">
-	<!-- <h3 class="text-center slideanim">Gallery</h3> -->
 
 
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -455,7 +258,7 @@ section.dark {
 
 <!-- CONTACT -->
 <div id="contact" class="container contact">
-	<br><br>
+	<br>
 	<div class="row slideanim">
 		<div class="col-md-4">	   
 		</div>
@@ -466,95 +269,13 @@ section.dark {
 			<p><span class="glyphicon glyphicon-envelope"></span>Email: <a href="mailto:namitamhatre411@gmail" target="_blank" style="color: black; text-decoration: underline; ">namitamhatre411@gmail.com</a></p>
 			<p><span class="glyphicon glyphicon-envelope"></span>Email: <a href="mailto:namita.mhatre@stonybrook.edu" target="_blank" style="color: black; text-decoration: underline; ">namita.mhatre@stonybrook.edu</a></p>
 		</div>
-		<!--
-		<div class="col-md-1">
-				<button class="btn pull-right" data-toggle="modal" data-target="#myModal"><b>DROP A NOTE HERE</b></button>
-		</div>	
-		-->
-		
 		
 	</div>
 	
 
-	<!-- <div class="modal fade" id="myModal1" role="dialog"> 
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4><span class="glyphicon glyphicon-user"></span> Experience</h4>
-				</div>
-			<div class="modal-body">
-			<p>
-				• Involved throughout the SDLC lifecycle of the project - Design, Code, Test, Debug and deployment.
-				• Designed and develop a web-based software to digitize contracts and inventories for internal use of stores department of MSRTC to facilitate ease of access using technologies HTML5, CSS, Bootstrap, Php, and XAMPP.
-			</p>
-
-			<h3>Technologies Used</h3>
-			<p>
-				HTML, CSS, JavaScript, Xampp, PHP, MySQL, Bootstrap
-			</p>
-			</div>
-		
-		</div>
-    </div> 
-
-    <div class="modal fade" id="myModal2" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4><span class="glyphicon glyphicon-user"></span> Experience</h4>
-				</div>
-			<div class="modal-body">
-			<p>
-				• Developed two responsive websites. The backend using PHP and the frontend using bootstrap, HTML5, CSS, Bootstrap, Php and JavaScript. Maintained database using XAMPP.
-				• Worked on optimizing the page loading time and other front-end optimizations, responsiveness, and cross-browser compatibility.
-			</p>
-
-			<h3>Technologies Used</h3>
-			<p>
-				HTML, CSS, JavaScript, Xampp, PHP, MySQL, Bootstrap
-			</p>
-			</div>
-		
-		</div>
-    </div>  -->
-
-	<!-- POP-UP 
-	<div class="modal fade" id="myModal" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4><span class="glyphicon glyphicon-send"></span> MESSAGE</h4>
-				</div>
-			<div class="modal-body">
-			<form role="form">
-				<div class="form-group">
-					<label for="name"><span class="glyphicon glyphicon-user"></span> Name</label>
-					<input type="text" class="form-control" id="name" placeholder="Enter your name"/>
-				</div>
-				<div class="form-group">
-					<label for="email"><span class="glyphicon glyphicon-envelope"></span> Email ID</label>
-					<input type="text" class="form-control" id="email" placeholder="abc@xyz.com"/>
-				</div>
-				<div class="form-group">
-					<label for="comment"><span class="glyphicon glyphicon-pencil"></span> Message</label>
-					<textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
-				</div>
-				<button type="submit" class="btn btn-block">SEND 
-				<span class="glyphicon glyphicon-ok"></span>
-				</button>
-			</form>
-			</div>
-		
-		</div>
-    </div> -->
-
 </div>
   
-  <!-- POP UP END -->
-</div>
+
 
 <!-- FOOTER START -->
 <footer class="footer">
