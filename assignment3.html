@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Namita Mhatre</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- EXTERNAL STYLESHEETS AND SCRIPTS  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/scripts.js"></script>
+    
+    <!-- SHORTCUT ICON  -->
+    <link rel="shortcut icon" href="images/icon.ico" />
+</head>
+
+
+
+<!-- BODY START  -->
+<body id="namita" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<!-- NAVIGATION BAR START  -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> 
+            </button>
+            <a class="navbar-brand">Namita Mhatre - CSE 592 Human Factors in Computation : Assignments & projects</a> 
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            
+            <ul class="nav navbar-nav navbar-right">
+                <!-- <li><a href="#home">Assignment 1</a></li> -->
+                <!-- <li><a href="#about-me">ABOUT ME</a></li>
+                <li><a href="#skills">SKILLS</a></li>
+                <li><a href="#experience">EXPERIENCE</a></li>
+                <li><a href="#blog">BLOG</a></li>
+                <li><a href="#gallery">GALLERY</a></li>
+                <li><a href="#contact">CONTACT</a></li> -->
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--  NAVIGATION BAR END -->
+
+
+
+<!-- HOME  -->
+<div id="home" class="container home">
+    <h3 class="text-center ">Assignment 3 : Arduino: Sensor Reading</h3>
+    <p style="font-size: 18px; font :Arial; ">
+    We were to do this in a team of two! My teammate for this assignment was Siddharth Shah!
+    <br>
+    This is our own home-made EDM music with disco lights!
+    <video width="400px" height="450px" controls><source src="images/edm.mp4" type="video/mp4"></video>
+    <br>
+    <img src="images/ass3.jpg" style="display: block; margin: auto;" width="400px" height="450px">
+    <br>
+    For this assignment we made a circuit consisting of an FSR(Force Sensitive Resistor) sensor along with a LED and a peizo buzzer driven by PWM. The FSR was wired with a voltage dividor and it's voltage was read through an analog input. As this varies from 0 to 1023, we had to map this down to 0 to 255 in order to maintain appropriate brightness for the LED and sound for the buzzer. (Brightness range for LED is 0-255 and that for buzzer 200-450 Hz. <br>
+    When the FSR has zero force on it (not pressed), the resistance offered was infinite and thus there was no current flowing through LED or buzzer. The following table shows the working of FSR at different conditions.
+    <img src="images/fsr_table.png" style="display: block; margin: auto;" width="400px" height="350px">
+
+
+    Following is the code for this: 
+    <br>
+    <pre>
+    <code> 
+
+
+    const int numReadings = 10;
+
+    int readings[numReadings];      
+    int readIndex = 0;              
+    int total = 0;                  
+    int average = 0;                
+
+    int speakerPin = 12;
+    int fsrPin = 0;
+    int ledPin = 9;
+
+    const float VCC = 5.0; 
+    const float R_DIV = 1000.0;
+
+    void setup() 
+    {
+      
+      Serial.begin(9600);
+      
+      for (int thisReading = 0; thisReading < numReadings; thisReading++) 
+      {
+        readings[thisReading] = 0;
+      }
+    }
+
+    void loop() 
+    {
+      int reading = analogRead(fsrPin);
+      Serial.println("Reading: " + String(reading));
+      total = total - readings[readIndex];
+      readings[readIndex] = reading;
+      total = total + readings[readIndex];
+      readIndex = readIndex + 1;
+
+      if (readIndex >= numReadings) 
+      {
+        readIndex = 0;
+      }
+
+      average = total / numReadings;
+      Serial.println("Average: " + String(average));
+      
+      int output  = map(average, 0, 750, 0, 255);
+      
+      if(output==0) 
+        noTone(speakerPin);
+      else 
+        tone(speakerPin, 200+output);
+        
+      analogWrite(9, output);
+
+      
+      float fsrV = average * VCC / 1023.0;
+      Serial.println("Voltage: " + String(fsrV) + " volts");
+      
+      float fsrR = R_DIV * (VCC / fsrV - 1.0);
+      Serial.println("Resistance: " + String(fsrR) + " ohms");
+      
+      float force;
+      float fsrG = 1.0 / fsrR;
+      if (fsrR <= 600) 
+          force = (fsrG - 0.00075) / 0.00000032639;
+      else
+          force =  fsrG / 0.000000642857;
+      Serial.println("Force: " + String(force) + " g");
+      Serial.println();
+      
+      delay(1000);        
+    }
+    </code>
+    </pre>
+
+    <br>
+    Following graphs show the result of applying the average filters.
+    <br>
+    <img src="images/no_filter_v.png" style="display: block; margin: auto;" width="400px" height="350px"><br>
+    <img src="images/filter_v.png" style="display: block; margin: auto;" width="400px" height="350px"><br>
+    <img src="images/no_filter_r.png" style="display: block; margin: auto;" width="400px" height="350px"><br>
+    <img src="images/filter_r.png" style="display: block; margin: auto;" width="400px" height="350px"><br>
+    <br>
+
+    This is one example of the Serial window output:
+    <br>
+    <img src="images/example.png" style="display: block; margin: auto;" width="400px" height="450px"><br>
+    <br>
+
+    These are the fritzing and circuit diagrams:
+    <br>
+    <div class="col-md-6">
+    <img src="images/fritzing_ass3.png" style="display: block; margin: auto;" width="350px" height="450px">
+    </div>
+    <div class="col-md-6">
+    <img src="images/circuit_ass3.png" style="display: block; margin: auto;" width="400px" height="450px">
+    </div>
+    <br>
+    </p>
+  <br><br><br><br><br>
+</div>
+<!-- HOME END  -->
+
+
+
+<!-- FOOTER START -->
+<footer class="footer">
+<a href="#" class="top">
+    <image src="images/top.png" style="width: 40px; height:40px; border-radius: 50%;"/> 
+</a>
+</footer>
+
+<div id="footer">
+
+    <div class="row">
+        <div class="col-md-9">
+            <a href="#" target="_blank"> <img src="images/twitter.png" class="social"/> </a> 
+            <a href="https://www.facebook.com/namita.mhatre.585" target="_blank"> <img src="images/facebook.png" class="social"/> </a> 
+            <a href="#" target="_blank"> <img src="images/google-plus.png" class="social"/> </a>
+            <a href="https://in.linkedin.com/in/namitamhatre" target="_blank"> <img src="images/linked-in.png" class="social"/> </a>
+            <a href="https://www.instagram.com/namita_411/" target="_blank"> <img src="images/instagram.png" class="social"/> </a>
+        </div>
+      <div class="col-md-3"><br><b>Namita Mhatre</b></div>
+    </div>
+
+</div>
+<!-- FOOTER END  -->
+
+</body>
+</html>
