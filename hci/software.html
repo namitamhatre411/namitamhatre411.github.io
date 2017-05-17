@@ -57,41 +57,23 @@
 
 <!-- HOME  -->
 <div id="home" class="container home">
-    <h3 class="text-center ">Assignment 6 : Comms and Viz</h3>
+    <h3 class="text-center ">Assignment 7 : Software</h3>
     <p style="font-size: 15px;">
     
-    So there were two methods suggested to go about reading the barcode to know which colour is in the spray can. 
-    <br><br>
-    1. To detect a barcode of black and white colour(reflective and absorbing surfaces). For this, an IR sensor could be used
-    to detect the four bars and their colours. Then a combintaion of these would result in one colour. 
-    <br>Disadvantage: Too much space is occupied as we have to fit in a Infrared LED inside the can holder as well as we have
-    to have four IR sensors and this becomes a bulky set-up.
-    <br><br>
-    2. We could have conductive material instead of using colours to reflect or absorb. For example, We have four stripes on the bar. 
-    According to the respective spray can we can have as much as 16 combinations. (2^4).
+    OpenCV (C++) was used to process the ARUCO Markers.  
+        <br>Arduino was used for giving the feedback to the user. The Arduino was coded to detect the colour of the can 
+        and output it as well as to blink if the positioning of the can was wrong.
+        <br>
+        The openCV C++ code which detected the AR Markers was interfaced with the Arduino to give the stream the input it gets 
+        from the live video recording.
+        <br>
+        Planning to develop an application where the user uploads the picture to be painted which is the projected/mapped 
+        to the wall using OpenCV.
+
     <br>
-    The method is portrayed below:
-    <br>
-        <img src="../images/img_1.jpg" style="display: block; margin: auto;" width="500px" height="350px">
-    <br>
-  <br> 
-  Now, we can have a holder with this set-up and different spray cans will have a different bar-code combination.
-  <br>
-  This is the trial-set up used:
-  <br>This image shows that the second and fourth bars are connected: (just visualizing the circuit. Normally, the output would go 
-  to the computer. No need of LEDs)
-  <br>
-  <img src="../images/img_2.jpg" style="display: block; margin: auto;" width="500px" height="350px">
-  This image shows that the second and third bars are connected:
-  <br>
-  <img src="../images/img_3.jpg" style="display: block; margin: auto;" width="500px" height="350px">   
-  This is the code on the spray-can.
-  <br>  
-  <img src="../images/img_4.jpg" style="display: block; margin: auto;" width="500px" height="350px"> 
-  
-  As this sensor would just have 16 readings for 16 colours, we do not have continuous data for visualization. 
-  </p>
-  <br>
+        
+    </p>
+       
 </div>
 <!-- HOME END  -->
 <!-- FOOTER START -->
