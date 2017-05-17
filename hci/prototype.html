@@ -57,39 +57,27 @@
 
 <!-- HOME  -->
 <div id="home" class="container home">
-    <h3 class="text-center ">Assignment 6 : Comms and Viz</h3>
+    <h3 class="text-center ">Assignment 8 : Physical Prototype</h3>
     <p style="font-size: 15px;">
     
-    So there were two methods suggested to go about reading the barcode to know which colour is in the spray can. 
-    <br><br>
-    1. To detect a barcode of black and white colour(reflective and absorbing surfaces). For this, an IR sensor could be used
-    to detect the four bars and their colours. Then a combintaion of these would result in one colour. 
-    <br>Disadvantage: Too much space is occupied as we have to fit in a Infrared LED inside the can holder as well as we have
-    to have four IR sensors and this becomes a bulky set-up.
-    <br><br>
-    2. We could have conductive material instead of using colours to reflect or absorb. For example, We have four stripes on the bar. 
-    According to the respective spray can we can have as much as 16 combinations. (2^4).
-    <br>
-    The method is portrayed below:
-    <br>
-        <img src="../images/img_1.jpg" style="display: block; margin: auto;" width="500px" height="350px">
-    <br>
-  <br> 
-  Now, we can have a holder with this set-up and different spray cans will have a different bar-code combination.
-  <br>
-  This is the trial-set up used:
-  <br>This image shows that the second and fourth bars are connected: (just visualizing the circuit. Normally, the output would go 
-  to the computer. No need of LEDs)
-  <br>
-  <img src="../images/img_2.jpg" style="display: block; margin: auto;" width="500px" height="350px">
-  This image shows that the second and third bars are connected:
-  <br>
-  <img src="../images/img_3.jpg" style="display: block; margin: auto;" width="500px" height="350px">   
-  This is the code on the spray-can.
-  <br>  
-  <img src="../images/img_4.jpg" style="display: block; margin: auto;" width="500px" height="350px"> 
-  
-  As this sensor would just have 16 readings for 16 colours, we do not have continuous data for visualization. 
+    Hardware<br>
+Arduino is used for sending feedback to the user and also for detecting the colour of the Spray can. 
+        Arduino is sent input by using serial communication after detecting the markers and positions. 
+        The other hardware is cameras for detecting markers on the can holder and the wall.
+        <br>
+        <br>
+Fabrication<br>
+FreeCad was used for designing the can holder. It has a circular pocket on top to hold the can and a 
+        screw and nut to fix it in place. There is a rectangular pocket to hold the Arduino. The design 
+        is very simple and compact.<br>
+        
+        This comprised of the physical prototype. It was built and tested. Following are the images of the prototype.
+        <br>
+
+        <img src="../images/proto1.jpg" style="display: block; margin: auto;" width="500px" height="350px">
+        <img src="../images/proto2.jpg" style="display: block; margin: auto;" width="500px" height="350px">
+        <img src="../images/proto3.jpg" style="display: block; margin: auto;" width="500px" height="350px">
+    
   </p>
   <br>
 </div>
